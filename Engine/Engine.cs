@@ -1,14 +1,14 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace ShelpixelAdventure
+namespace ShelpixelAdventure.Engine
 {
-    public class Main : Game
+    public class Engine : Game
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
-        public Main()
+        public Engine()
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
