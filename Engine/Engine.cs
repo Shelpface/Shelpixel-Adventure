@@ -7,17 +7,16 @@ namespace ShelpixelAdventure.Engine
 {
     public class Engine : Game
     {
+        private static ContentManager _content;
+
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
-
-        private static ContentManager _contentRef;
-        public static ref ContentManager ContentRef { get => ref _contentRef; }
 
         public Engine()
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            ContentRef = Content;
+            _content = Content;
             IsMouseVisible = true;
         }
 
@@ -47,5 +46,11 @@ namespace ShelpixelAdventure.Engine
 
             base.Draw(gameTime);
         }
+
+        public static T LoadAsset<T>(string assetName)
+        {
+            return _content.Load<T>(assetName);
+        }
+
     }
 }
