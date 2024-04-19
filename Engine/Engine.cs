@@ -1,5 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using System;
 
 namespace ShelpixelAdventure.Engine
 {
@@ -8,10 +10,14 @@ namespace ShelpixelAdventure.Engine
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
+        private static ContentManager _contentRef;
+        public static ref ContentManager ContentRef { get => ref _contentRef; }
+
         public Engine()
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            ContentRef = Content;
             IsMouseVisible = true;
         }
 
