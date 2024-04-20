@@ -22,14 +22,14 @@ namespace ShelpixelAdventure.Engine
 
         protected override void Initialize()
         {
-
+            
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            SceneManager.Load(new Scene()); // There is currently no functionality here. Just a stab
         }
 
         protected override void Update(GameTime gameTime)
