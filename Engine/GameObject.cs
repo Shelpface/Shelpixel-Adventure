@@ -7,7 +7,7 @@ namespace ShelpixelAdventure.Engine
     {   
         private bool _isInitialized = false;
 
-        private Scene _scene;
+        private Scene _parentScene;
 
         private GameObject _parentObject;
 
@@ -33,13 +33,13 @@ namespace ShelpixelAdventure.Engine
 
         }
 
-        private void Initialize(Scene scene)
+        public void Initialize(Scene scene)
         {
-            _scene = scene;
+            _parentScene = scene;
             Initialize();
         }
 
-        private void Initialize(GameObject parent)
+        public void Initialize(GameObject parent)
         {
             _parentObject = parent;
             Initialize();
@@ -49,14 +49,14 @@ namespace ShelpixelAdventure.Engine
         {
             if (_isInitialized) throw new System.Exception(this + " has already been Initialized!");
 
-            _isInitialized = true;
+            IsInitialized = true;
             if (_parentObject != null)
             {
                 _parentObject.AddInitializedChild(this);
             }
             else
             {
-                //_parentObject.AddInitializedChild(this); Need to implement this method in the Scene class
+                _parentScene.AddInitializedChild(this);
             }
         }
 
@@ -73,7 +73,7 @@ namespace ShelpixelAdventure.Engine
             }
             else
             {
-                throw new System.Exception("You are trying to add an uninitialized object!");
+                throw new System.Exception("You are trying to add an uninitialized GameObject! Use AddChild instead.");
             }
         }
 
