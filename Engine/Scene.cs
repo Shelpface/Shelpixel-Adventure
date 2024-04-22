@@ -29,7 +29,7 @@ namespace ShelpixelAdventure.Engine
             }
         }
 
-        protected virtual void Update()
+        public virtual void Update()
         {
             if (_children != null)
             {
@@ -40,7 +40,7 @@ namespace ShelpixelAdventure.Engine
             }
         }
 
-        protected virtual void Draw()
+        public virtual void Draw()
         {
             if (_children != null )
             {
