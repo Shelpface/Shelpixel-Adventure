@@ -9,7 +9,7 @@ namespace ShelpixelAdventure.Engine
 
         public Scene()
         {
-            
+            _children = new List<GameObject>();
         }
 
         public void AddChild(GameObject child)

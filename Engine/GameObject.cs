@@ -31,7 +31,7 @@ namespace ShelpixelAdventure.Engine
 
         public GameObject()
         {
-
+            _children = new List<GameObject>();
         }
 
         public void Initialize(Scene scene)
