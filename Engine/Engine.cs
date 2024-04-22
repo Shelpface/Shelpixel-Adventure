@@ -22,7 +22,7 @@ namespace ShelpixelAdventure.Engine
 
         protected override void Initialize()
         {
-            
+            AssetManager.Initialize(_content);
             base.Initialize();
         }
 
@@ -47,11 +47,6 @@ namespace ShelpixelAdventure.Engine
             _spriteBatch.End();
 
             base.Draw(gameTime);
-        }
-
-        public static T LoadAsset<T>(string assetName)
-        {
-            return _content.Load<T>(assetName);
         }
 
     }
