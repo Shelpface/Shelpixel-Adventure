@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 
 namespace ShelpixelAdventure.Engine
@@ -88,13 +89,13 @@ namespace ShelpixelAdventure.Engine
             }
         }
 
-        public virtual void Draw() // Updating by scene
+        public virtual void Draw(SpriteBatch spriteBatch) // Updating by scene
         {
             if (_children.Count > 0)
             {
                 foreach (GameObject child in _children)
                 {
-                    child.Draw();
+                    child.Draw(spriteBatch);
                 }
             }
         }

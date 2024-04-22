@@ -40,13 +40,13 @@ namespace ShelpixelAdventure.Engine
             }
         }
 
-        public virtual void Draw()
+        public virtual void Draw(SpriteBatch spriteBatch)
         {
             if (_children != null )
             {
                 foreach (var child in _children)
                 {
-                    child.Draw();
+                    child.Draw(spriteBatch);
                 }
             }
         }
