@@ -34,7 +34,7 @@ namespace ShelpixelAdventure.Engine
 
         protected override void Update(GameTime gameTime)
         {
-
+            SceneManager.CurrentScene.Update();
             base.Update(gameTime);
         }
 
@@ -42,7 +42,9 @@ namespace ShelpixelAdventure.Engine
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-
+            _spriteBatch.Begin();
+            SceneManager.CurrentScene.Draw(_spriteBatch);
+            _spriteBatch.End();
 
             base.Draw(gameTime);
         }
