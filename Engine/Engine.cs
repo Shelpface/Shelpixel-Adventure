@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using ShelpixelAdventure.test;
 using System;
 
 namespace ShelpixelAdventure.Engine
@@ -29,7 +30,7 @@ namespace ShelpixelAdventure.Engine
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-            SceneManager.Load(new Scene()); // There is currently no functionality here. Just a stab
+            SceneManager.Load(new TestScene());
         }
 
         protected override void Update(GameTime gameTime)
