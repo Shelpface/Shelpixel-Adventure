@@ -5,9 +5,13 @@ namespace ShelpixelAdventure.test
 {
     public class TestScene : Scene
     {
+        GameObject testgo;
         public TestScene()
         {
-            AddChild(new TestGO());
+            testgo = new TestGO();
+            AddChild(testgo);
+
+            testgo.AddChild(new ChildObjectTest());
         }
     }
 }
