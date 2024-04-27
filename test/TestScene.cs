@@ -11,7 +11,6 @@ namespace ShelpixelAdventure.test
             testgo = new TestGO();
             AddChild(testgo);
 
-            testgo.AddChild(new ChildObjectTest());
         }
     }
 }

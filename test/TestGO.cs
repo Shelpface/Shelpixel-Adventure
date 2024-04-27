@@ -7,11 +7,11 @@ namespace ShelpixelAdventure.test
     public class TestGO : GameObject
     {
         Texture2D texture;
-        protected override void Initialize()
+        public override void Ready()
         {
             texture = AssetManager.Load<Texture2D>("2d_girl_pink_hair");
 
-            base.Initialize();
+            base.Ready();
         }
 
         public override void Draw(SpriteBatch spriteBatch)
