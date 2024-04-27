@@ -28,7 +28,7 @@ namespace ShelpixelAdventure.Engine
             IsInitialized = true;
 
             _parentScene = scene;
-            _parentScene.AddInitializedChild(this);
+            _parentScene.AddInitializedGO(this);
 
             Ready();
         }

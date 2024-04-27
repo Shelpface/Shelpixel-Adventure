@@ -5,23 +5,23 @@ namespace ShelpixelAdventure.Engine
 {
     public class Scene
     {
-        private List<GameObject> _children;
+        private List<GameObject> _gameObjects;
 
         public Scene()
         {
-            _children = new List<GameObject>();
+            _gameObjects = new List<GameObject>();
         }
 
-        public void AddChild(GameObject child)
+        public void AddGO(GameObject gameObject)
         {
-            child.Initialize(this);
+            gameObject.Initialize(this);
         }
 
-        public void AddInitializedChild(GameObject initChild)
+        public void AddInitializedGO(GameObject initializedGameObject)
         {
-            if (initChild.IsInitialized)
+            if (initializedGameObject.IsInitialized)
             {
-                _children.Add(initChild);
+                _gameObjects.Add(initializedGameObject);
             }
             else
             {
@@ -31,23 +31,17 @@ namespace ShelpixelAdventure.Engine
 
         public virtual void Update()
         {
-            if (_children != null)
+            foreach (var go in _gameObjects)
             {
-                foreach (var child in _children)
-                {
-                    child.Update();
-                }
+                go.Update();
             }
         }
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            if (_children != null )
+            foreach (var go in _gameObjects)
             {
-                foreach (var child in _children)
-                {
-                    child.Draw(spriteBatch);
-                }
+                go.Draw(spriteBatch);
             }
         }
 

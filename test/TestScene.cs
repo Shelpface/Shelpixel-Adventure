@@ -9,7 +9,7 @@ namespace ShelpixelAdventure.test
         public TestScene()
         {
             testgo = new TestGO();
-            AddChild(testgo);
+            AddGO(testgo);
 
         }
     }
