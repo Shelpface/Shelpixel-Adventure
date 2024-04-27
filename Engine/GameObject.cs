@@ -29,6 +29,13 @@ namespace ShelpixelAdventure.Engine
 
             _parentScene = scene;
             _parentScene.AddInitializedChild(this);
+
+            Ready();
+        }
+
+        public virtual void Ready()
+        {
+
         }
 
         public virtual void Update() // Updating by scene
