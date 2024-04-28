@@ -37,18 +37,14 @@ namespace ShelpixelAdventure.Engine
         {
             if (_isInitialized) throw new System.Exception(this + " has already been Initialized!");
             IsInitialized = true;
-
+            
             _parentGameObject = parentGameObject;
-            //_parentGameObject.AddComponent(this)
+            _parentGameObject.AddInitializedComponent(this);
 
             Ready();
         }
 
-        public virtual void Ready()
-        {
-
-        }
-
+        public virtual void Ready() { }
         public virtual void Update() { }
         public virtual void Draw(SpriteBatch spriteBatch) { }
     }
