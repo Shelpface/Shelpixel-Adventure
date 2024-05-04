@@ -35,6 +35,7 @@ namespace ShelpixelAdventure.Engine
 
         protected override void Update(GameTime gameTime)
         {
+            InputManager.Update();
             SceneManager.CurrentScene.Update();
             base.Update(gameTime);
         }

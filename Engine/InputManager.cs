@@ -4,20 +4,16 @@ namespace ShelpixelAdventure.Engine
 {
     public static class InputManager
     {
-        private static KeyboardState _previousKS;
+        private static KeyboardState _currentKS = Keyboard.GetState();
+        private static KeyboardState _previousKS = _currentKS;
 
-        public static bool IsKeyPressed(Keys key)
+        public static bool IsKeyJustPressed(Keys key) => _currentKS.IsKeyDown(key) && !_previousKS.IsKeyDown(key);
+        public static bool IsKeyPressed(Keys key) => _currentKS.IsKeyDown(key);
+
+        public static void Update()
         {
-            bool isKeyDown = Keyboard.GetState().IsKeyDown(key);
-            bool wasKeyDownInPreviousFrame = _previousKS.IsKeyDown(key);
-            _previousKS = Keyboard.GetState();
-
-            return isKeyDown && !wasKeyDownInPreviousFrame;
-        }
-
-        public static bool IsKeyDown(Keys key)
-        {
-            return Keyboard.GetState().IsKeyDown(key);
+            _previousKS = _currentKS;
+            _currentKS = Keyboard.GetState();
         }
     }
 }
